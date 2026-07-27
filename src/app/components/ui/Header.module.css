@@ -1,0 +1,39 @@
+#header * {
+    /* border: 1px solid red; */
+}
+
+#header {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1fr;
+    align-items: center;
+    justify-items: center;
+    width: 80%;
+    font-size: 2rem;
+    font-weight: 400;
+    margin: 1.7rem auto;
+    color: var(--main-green);
+
+    #logo,
+    ul {
+        color: var(--main-green);
+        text-transform: uppercase;
+        line-height: 1.7;
+    }
+
+    #logo {
+        font-weight: 900;
+        font-size: 2.8rem;
+    }
+
+    ul {
+        font-weight: 800;
+        display: flex;
+        color: var(--main-green);
+        gap: 1.75rem;
+        font-size: 1.4rem;
+        li a {
+            border-bottom: 1px solid var(--main-green);
+        }
+    }
+}
