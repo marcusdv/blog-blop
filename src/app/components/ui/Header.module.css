@@ -1,17 +1,12 @@
 #header * {
-    /* border: 1px solid red; */
 }
-
 #header {
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr;
-    width: 80%;
-    font-size: 2rem;
-    font-weight: 400;
-    margin: 2rem auto;
-    color: var(--main-green);
-    gap: 8;
+    margin: 3.7rem auto 3rem auto;
+    gap: 14;
+    width: 90%;
 
     #logo,
     ul {
@@ -21,25 +16,51 @@
 
     #logo {
         font-weight: 900;
-        font-size: 2.8rem;
+        font-size: 2rem;
         text-align: center;
+        transform: scaleY(1.25);
     }
 
     #navegacao ul {
-        font-weight: 800;
+        font-weight: 900;
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
+        flex-wrap: nowrap;
         color: var(--main-green);
-        gap: 1.75rem;
-        font-size: 1.4rem;
+        gap: 1rem;
+        font-size: 1.15rem;
+
+        li {
+            padding: 0 0.3rem;
+            line-height: 1.75rem;
+        }
+
         li a {
-            border-bottom: 1px solid var(--main-green);
+            display: inline-block;
+            line-height: 1.3rem;
+            border-bottom: 0.25rem solid var(--main-green);
+            white-space: nowrap;
         }
     }
 
     #icones {
+        padding: 0.5rem 0;
+        border-radius: 10px;
         display: flex;
-        justify-content: space-evenly;
-        font-size: 1.5rem;
+        justify-content: center;
+        gap: 20;
+        font-size: 1.75rem;
+    }
+
+    #paint {
+        position: absolute;
+        top: 0;
+        right: 25;
+        border-top: none;
+        border-radius: 0 0 5 5;
+        padding: 8px 5px 8px 5px;
+        font-size: 1.4rem;
+        color: var(--main-yellow);
+        background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
     }
 }

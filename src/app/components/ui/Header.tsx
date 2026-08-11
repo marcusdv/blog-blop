@@ -1,7 +1,9 @@
 import { IoLogoVercel } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
-import { CgMail } from "react-icons/cg";
+import { MdEmail } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
+import { FaPaintRoller } from "react-icons/fa6";
+import { BiRun } from "react-icons/bi";
 
 import styles from "./Header.module.css";
 
@@ -10,20 +12,20 @@ export default function Header() {
         <header id={styles.header}>
             {/* lado esquerdo */}
             <div id={styles.logo}>
-                <a>Marcus Oliveira</a>
+                <a>Marcus Costa</a>
             </div>
 
             {/* lado direito */}
             <nav id={styles.navegacao}>
                 <ul>
-                    <li>
+                    <li className={"efeitoVarredura"}>
                         <a>Sobre</a>
                     </li>
-                    <li>
+                    <li className={"efeitoVarredura"}>
                         <a>Blog</a>
                     </li>
-                    <li>
-                        <a>Resumo Semanal</a>
+                    <li className={"efeitoVarredura"}>
+                        <a>Meus Projetos</a>
                     </li>
                 </ul>
             </nav>
@@ -32,15 +34,10 @@ export default function Header() {
             <div>
                 <ul id={styles.icones}>
                     <li>
-                        <a
-                            href="mailto:marcus.vinicius.bittencourt.c@gmail.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                        >
-                            <CgMail />
+                        <a href="https://vercel.com/marcusdvs-projects" target="_blank" rel="noopener noreferrer">
+                            <IoLogoVercel />
                         </a>
                     </li>
-
                     <li>
                         <a
                             href="https://www.linkedin.com/in/marcus-bittencourt/"
@@ -56,12 +53,26 @@ export default function Header() {
                             <FaGithub />
                         </a>
                     </li>
+
+                    <li>
+                        <a
+                            href="mailto:marcus.vinicius.bittencourt.c@gmail.com"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <MdEmail />
+                        </a>
+                    </li>
                     <li>
                         <a href="https://vercel.com/marcusdvs-projects" target="_blank" rel="noopener noreferrer">
-                            <IoLogoVercel />
+                            <BiRun />
                         </a>
                     </li>
                 </ul>
+            </div>
+
+            <div id={styles.paint}>
+                <FaPaintRoller />
             </div>
         </header>
     );

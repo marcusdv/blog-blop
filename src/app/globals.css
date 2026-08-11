@@ -1,14 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800;900&display=swap");
 @import "tailwindcss";
 
 :root {
-    --main-green: hsl(118, 56%, 22%);
+    --main-green: hsl(118deg 56% 22%);
+    --main-green-hover: hsl(68, 39%, 69%);
     --main-yellow: hsl(68, 39%, 89%);
-    --main-black: #222222;
+    --main-black: #211713;
     --main-white: white;
+    --main-border: 4px solid var(--main-black);
+    --shadow: 0 30px 80px rgba(33, 23, 19, 0.18);
+}
+
+.efeitoVarredura {
+    background-image: linear-gradient(var(--main-green-hover), var(--main-green-hover));
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 0% 100%;
+    transition: background-size 0.3s ease;
+}
+
+.efeitoVarredura:hover {
+    background-position: left;
+    background-size: 100% 100%;
+}
+
+@keyframes flutuar {
+    0%,
+    100% {
+        transform: translateY(3);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
 }
 
 .bold {
-    font-weight: 700;
+    font-weight: 800;
 }
 
 .bolder {
@@ -17,28 +44,173 @@
 
 body {
     background-color: var(--main-yellow);
-    font-weight: 400;
+    font-family: "Inter", sans-serif;
     color: var(--main-black);
+}
+
+button:hover,
+a:hover {
+    cursor: pointer;
 }
 
 main {
     width: 90%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40;
+    margin-bottom: 40px;
 
-    #quadrado-temporario {
-        width: 271px;
-        height: 271px;
-        background-color: var(--main-yellow);
-        margin: 0 auto;
-        border-radius: 50%;
-        border: 1px solid var(--main-black);
-    }
-    h1 {
+    h2 {
         font-weight: 900;
-        font-size: 2.8rem;
+        font-size: 2.5rem;
         text-transform: uppercase;
+        transform: scaleY(1.2);
     }
-    p {
-        font-size: 1.4rem;
+
+    #introduction-section {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 40;
+        margin-bottom: 6rem;
+
+        picture {
+            align-self: center;
+
+            #quadrado-temporario {
+                width: clamp(100px, 70vw, 400px);
+                aspect-ratio: 1 / 1;
+                background-color: var(--main-yellow);
+                border-radius: 50%;
+                border: var(--main-border);
+                box-shadow: 10px 10px 0 var(--main-green);
+                border-right: 0.25rem solid 2 var(--main-green);
+                border-bottom: 0.25rem solid 2 var(--main-green);
+            }
+        }
+
+        h1 {
+            font-weight: 900;
+            font-size: 2.75rem;
+            text-transform: uppercase;
+            transform: scaleY(1.2);
+            white-space: nowrap;
+            border-left: 0.25rem solid var(--main-green);
+            padding-left: 2rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+
+        button {
+            background-color: var(--main-green);
+            color: var(--main-yellow);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            padding: 4px 22px;
+            border-radius: 1rem;
+            box-shadow: 5px 5px 0 var(--main-black);
+            transition:
+                transform 0.18s ease,
+                box-shadow 0.18s ease;
+        }
+
+        button:hover {
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 var(--main-black);
+        }
     }
+
+    /* ARTIGOS */
+    article {
+        border: 4px solid var(--main-black);
+        background-color: white;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 10px 10px 0 var(--main-black);
+
+        picture {
+            /* TEMPORARIO */
+            display: block;
+            width: 100%;
+            height: 270px;
+            background-color: rgb(186, 85, 85);
+            border-bottom: 4px solid var(--main-black);
+        }
+
+        #card-content {
+            padding: 1.5rem 1rem;
+        }
+
+        h3 {
+            color: var(--main-black);
+            border-bottom: 2px solid var(--main-black);
+            font-size: 2.5rem;
+            width: fit-content;
+            font-weight: 900;
+            padding-bottom: -100px;
+            text-transform: uppercase;
+            line-height: 2rem;
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+
+        #article-tags {
+            display: flex;
+            gap: 10;
+            flex-wrap: wrap;
+            padding: 1rem;
+
+            li {
+                font-size: 1.2rem;
+                border: 1px solid var(--main-green);
+                color: var(--main-green);
+                border-radius: 0.6rem;
+                font-weight: 400;
+                padding: 0 20px;
+                color: white;
+                background-color: var(--main-black);
+            }
+        }
+    }
+
+    #voltar-ao-topo {
+        display: flex;
+        align-items: center;
+        gap: 6;
+        width: fit-content;
+        color: var(--main-green);
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 3rem auto;
+        padding: 1rem;
+        cursor: pointer;
+
+        p {
+            border-bottom: 0.1rem solid var(--main-green);
+            line-height: 2rem;
+        }
+
+        svg {
+            animation: flutuar 1.5s ease-in-out infinite;
+        }
+    }
+}
+
+article:hover {
+    box-shadow: 15px 15px 0 var(--main-black);
+}
+
+footer {
+    background-color: var(--main-green);
+    color: var(--main-yellow);
+    font-size: 1.5rem;
+    padding: 2rem 2rem;
+    text-align: center;
 }
