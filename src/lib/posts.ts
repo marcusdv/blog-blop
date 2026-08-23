@@ -36,22 +36,25 @@ export function getAllPosts(): Post[] {
 
 export function getPostBySlug(slug: string): Post | null {
   const files = fs.readdirSync(postsDirectory);
-  const file = files.find(f => f.endsWith('.md'));
 
-  if (!file) return null;
+  for (const file of files) {
+    if (!file.endsWith('.md')) continue;
 
-  const filePath = path.join(postsDirectory, file);
-  const fileContents = fs.readFileSync(filePath, 'utf8');
-  const { data, content } = matter(fileContents);
+    const filePath = path.join(postsDirectory, file);
+    const fileContents = fs.readFileSync(filePath, 'utf8');
+    const { data, content } = matter(fileContents);
 
-  if (data.slug !== slug) return null;
+    if (data.slug === slug) {
+      return {
+        slug: data.slug,
+        title: data.title,
+        date: data.date,
+        description: data.description,
+        image: data.image,
+        content: marked(content) as string
+      };
+    }
+  }
 
-  return {
-    slug: data.slug,
-    title: data.title,
-    date: data.date,
-    description: data.description,
-    image: data.image,
-    content: marked(content) as string
-  };
+  return null;
 }
