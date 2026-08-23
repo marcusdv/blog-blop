@@ -51,16 +51,4 @@
         gap: 20;
         font-size: 1.75rem;
     }
-
-    #paint {
-        position: absolute;
-        top: 0;
-        right: 25;
-        border-top: none;
-        border-radius: 0 0 5 5;
-        padding: 8px 5px 8px 5px;
-        font-size: 1.4rem;
-        color: var(--main-yellow);
-        background: linear-gradient(135deg, #3a1c71, #d76d77, #ffaf7b);
-    }
 }

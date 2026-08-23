@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Header from "./components/ui/Header";
 import "./globals.css";
 // import localFonts from "next/font/local";
 
@@ -29,7 +30,10 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br" className={`h-full antialiased `}>
-            <body>{children}</body>
+            <body>
+                <Header />
+                {children}
+            </body>
         </html>
     );
 }

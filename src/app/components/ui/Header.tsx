@@ -2,8 +2,6 @@ import { IoLogoVercel } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { FaPaintRoller } from "react-icons/fa6";
-import { BiRun } from "react-icons/bi";
 
 import styles from "./Header.module.css";
 
@@ -12,20 +10,20 @@ export default function Header() {
         <header id={styles.header}>
             {/* lado esquerdo */}
             <div id={styles.logo}>
-                <a>Marcus Costa</a>
+                <a href="/">Marcus Costa</a>
             </div>
 
             {/* lado direito */}
             <nav id={styles.navegacao}>
                 <ul>
                     <li className={"efeitoVarredura"}>
-                        <a>Sobre</a>
+                        <a href="/sobre">Sobre</a>
                     </li>
                     <li className={"efeitoVarredura"}>
-                        <a>Blog</a>
+                        <a href="/artigos">Blog</a>
                     </li>
                     <li className={"efeitoVarredura"}>
-                        <a>Meus Projetos</a>
+                        <a href="/projetos">Meus Projetos</a>
                     </li>
                 </ul>
             </nav>
@@ -64,15 +62,9 @@ export default function Header() {
                         </a>
                     </li>
                     <li>
-                        <a href="https://vercel.com/marcusdvs-projects" target="_blank" rel="noopener noreferrer">
-                            <BiRun />
-                        </a>
+                        <a href="" target="_blank" rel="noopener noreferrer"></a>
                     </li>
                 </ul>
-            </div>
-
-            <div id={styles.paint}>
-                <FaPaintRoller />
             </div>
         </header>
     );

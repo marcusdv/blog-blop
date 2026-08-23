@@ -2,7 +2,7 @@
 @import "tailwindcss";
 
 :root {
-    --main-green: hsl(118deg 56% 22%);
+    --main-green: hsl(152, 56%, 22%);
     --main-green-hover: hsl(68, 39%, 69%);
     --main-yellow: hsl(68, 39%, 89%);
     --main-black: #211713;
@@ -42,6 +42,32 @@
     font-weight: 900;
 }
 
+h1 {
+    font-weight: 900;
+    font-size: 2.75rem;
+    text-transform: uppercase;
+    transform: scaleY(1.2);
+    white-space: nowrap;
+}
+
+h2 {
+    font-weight: 900;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    transform: scaleY(1.2);
+}
+
+h3 {
+    color: var(--main-black);
+    border-bottom: 2px solid var(--main-black);
+    font-size: 1.75rem;
+    width: fit-content;
+    font-weight: 900;
+    padding-bottom: -100px;
+    text-transform: uppercase;
+    line-height: 2rem;
+}
+
 body {
     background-color: var(--main-yellow);
     font-family: "Inter", sans-serif;
@@ -61,13 +87,6 @@ main {
     gap: 40;
     margin-bottom: 40px;
 
-    h2 {
-        font-weight: 900;
-        font-size: 2.5rem;
-        text-transform: uppercase;
-        transform: scaleY(1.2);
-    }
-
     #introduction-section {
         display: flex;
         flex-direction: column;
@@ -83,7 +102,6 @@ main {
                 aspect-ratio: 1 / 1;
                 background-color: var(--main-yellow);
                 border-radius: 50%;
-                border: var(--main-border);
                 box-shadow: 10px 10px 0 var(--main-green);
                 border-right: 0.25rem solid 2 var(--main-green);
                 border-bottom: 0.25rem solid 2 var(--main-green);
@@ -92,12 +110,12 @@ main {
 
         h1 {
             font-weight: 900;
-            font-size: 2.75rem;
+            font-size: 2rem;
             text-transform: uppercase;
             transform: scaleY(1.2);
             white-space: nowrap;
             border-left: 0.25rem solid var(--main-green);
-            padding-left: 2rem;
+            padding-left: 1rem;
         }
 
         p {
@@ -143,17 +161,6 @@ main {
 
         #card-content {
             padding: 1.5rem 1rem;
-        }
-
-        h3 {
-            color: var(--main-black);
-            border-bottom: 2px solid var(--main-black);
-            font-size: 2.5rem;
-            width: fit-content;
-            font-weight: 900;
-            padding-bottom: -100px;
-            text-transform: uppercase;
-            line-height: 2rem;
         }
 
         p {

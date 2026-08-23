@@ -2,11 +2,11 @@
 import Header from "./components/ui/Header";
 import Contato from "./components/ui/Contato";
 import { PiArrowFatLinesUpBold } from "react-icons/pi";
+import Footer from "./footer/page";
 
 export default function Home() {
     return (
         <div>
-            <Header />
             <main>
                 <section id="introduction-section">
                     <picture>
@@ -101,9 +101,7 @@ export default function Home() {
                 </div>
             </main>
             <Contato />
-            <footer>
-                <p>Marcus Oliveira ©</p>
-            </footer>
+            <Footer />
         </div>
     );
 }
