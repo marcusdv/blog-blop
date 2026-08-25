@@ -1,8 +1,8 @@
 ---
-title: "Li, Vi e Assisti"
+title: "omg-thats-crazy"
 date: "2026-08-09"
 description: "Resumo pessoal sobre livros, filmes e séries que acompanhei."
-image: "/images/filmes.jpg"
+image: "/images/li-vi-assisti.jpg"
 slug: "li-vi-assisti"
 tags: ["jogos", "webdev", "nextjs"]
 ---

@@ -1,9 +1,9 @@
 ---
-title: "Li, Vi e Assisti"
+title: "Coisas que eu gosto"
 date: "2026-08-09"
-description: "Resumo pessoal sobre livros, filmes e séries que acompanhei."
-image: "/images/filmes.jpg"
-slug: "li-vi-assisti"
+description: "Coisas que eu gosto sobre desenvolvimento."
+image: "filmes.jpg"
+slug: "barabim-barabum"
 tags: ["jogos", "webdev", "nextjs"]
 ---
 

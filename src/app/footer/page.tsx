@@ -2,10 +2,13 @@ import styles from "./footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { IoLogoVercel } from "react-icons/io5";
+import Contato from "../components/ui/Contato";
 
 export default function Footer() {
     return (
         <footer id={styles.footer}>
+            <Contato />
+
             <div id={styles.footerSocial}>
                 <h4>SIGA-ME!</h4>
                 <ul>
@@ -33,13 +36,7 @@ export default function Footer() {
             </div>
 
             <div id={styles.footerContent}>
-                <p>© 2026 Marcus Costa. Todos os direitos reservados.</p>
-                <p>
-                    Desenvolvido com Next.js e React. |{" "}
-                    <a href="" target="_blank" rel="noopener noreferrer">
-                        GitHub
-                    </a>
-                </p>
+                <p>© 2026 Marcus Costa. </p>
             </div>
         </footer>
     );

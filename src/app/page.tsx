@@ -3,6 +3,8 @@ import Header from "./components/ui/Header";
 import Contato from "./components/ui/Contato";
 import { PiArrowFatLinesUpBold } from "react-icons/pi";
 import Footer from "./footer/page";
+import Link from "next/link";
+import Image from "next/image";
 
 export default function Home() {
     return (
@@ -31,26 +33,24 @@ export default function Home() {
                         <li>
                             <article>
                                 <picture>
-                                    <a href=""></a>
+                                    <Image src={`/images/default.jpg`} alt="" width={500} height={300} />
                                 </picture>
                                 <div id="card-content">
                                     <hgroup>
-                                        <h3>Titulo h3 #879</h3>
+                                        <Link href={""}>
+                                            <h3>Temporario #983</h3>
+                                        </Link>
                                         <p>
                                             <time dateTime="">Dezembro 10, 2026</time>
                                         </p>
                                     </hgroup>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sint soluta
-                                        error, dolore distinctio nisi sapiente dolor, ipsam reiciendis consequatur
-                                        ratione, possimus ea.
-                                    </p>
+
+                                    <p>delectus illo commodi iusto in necessitatibus nostrum vero hic, totam beatae</p>
                                 </div>
                                 <ul id="article-tags">
-                                    <li>#tabueleiro</li>
-                                    <li>#vôlei</li>
-                                    <li>#next</li>
-                                    <li>#sql</li>
+                                    <li> basd</li>
+                                    <li>olasdkf</li>
+                                    <li>açksd</li>
                                 </ul>
                             </article>
                         </li>
@@ -64,26 +64,24 @@ export default function Home() {
                         <li>
                             <article>
                                 <picture>
-                                    <a href=""></a>
+                                    <Image src={`/images/default.jpg`} alt="" width={600} height={600} />
                                 </picture>
                                 <div id="card-content">
                                     <hgroup>
-                                        <h3>Titulo h3 #879</h3>
+                                        <Link href={""}>
+                                            <h3>Temporario #983</h3>
+                                        </Link>
                                         <p>
                                             <time dateTime="">Dezembro 10, 2026</time>
                                         </p>
                                     </hgroup>
-                                    <p>
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro sint soluta
-                                        error, dolore distinctio nisi sapiente dolor, ipsam reiciendis consequatur
-                                        ratione, possimus ea.
-                                    </p>
+
+                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo similique ipsam</p>
                                 </div>
                                 <ul id="article-tags">
-                                    <li>#tabueleiro</li>
-                                    <li>#vôlei</li>
-                                    <li>#next</li>
-                                    <li>#sql</li>
+                                    <li> basd</li>
+                                    <li>olasdkf</li>
+                                    <li>açksd</li>
                                 </ul>
                             </article>
                         </li>
@@ -100,8 +98,6 @@ export default function Home() {
                     <PiArrowFatLinesUpBold />
                 </div>
             </main>
-            <Contato />
-            <Footer />
         </div>
     );
 }
