@@ -4,8 +4,6 @@
 
     h2 {
         font-weight: 900;
-        font-size: 1.35rem;
-        padding-bottom: 20px;
         white-space: nowrap;
         text-transform: uppercase;
         transform: scaleY(1.2);
@@ -43,7 +41,7 @@
     }
 
     button {
-        background-color: var(--main-yellow);
+        background-color: var(--main-white);
         color: var(--main-black);
         font-size: 1.4rem;
         text-transform: uppercase;

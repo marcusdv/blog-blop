@@ -1,12 +1,10 @@
-#header * {
-}
 #header {
     display: grid;
     justify-content: center;
     grid-template-columns: 1fr;
-    margin: 3.7rem auto 3rem auto;
-    gap: 14;
-    width: 90%;
+    gap: 20;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
 
     #logo,
     ul {
@@ -22,13 +20,13 @@
     }
 
     #navegacao ul {
-        font-weight: 900;
+        font-weight: 800;
         display: flex;
         justify-content: center;
         flex-wrap: nowrap;
         color: var(--main-green);
         gap: 1rem;
-        font-size: 1.15rem;
+        font-size: 1.1rem;
 
         li {
             padding: 0 0.3rem;
@@ -38,7 +36,7 @@
         li a {
             display: inline-block;
             line-height: 1.3rem;
-            border-bottom: 0.25rem solid var(--main-green);
+            border-bottom: 0.15rem solid var(--main-green);
             white-space: nowrap;
         }
     }
@@ -50,5 +48,41 @@
         justify-content: center;
         gap: 20;
         font-size: 1.75rem;
+    }
+}
+
+@media (min-width: 768px) {
+    #header {
+        grid-template-columns: 1fr 1fr;
+        margin: 3.7rem auto 3rem auto;
+        width: 85%;
+
+        #logo {
+            justify-self: start;
+            font-size: 2.3rem;
+            text-wrap: nowrap;
+        }
+
+        #icones {
+            grid-column: 2;
+            padding-left: 50%;
+        }
+
+        #navegacao {
+            justify-self: end;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+    #header {
+        width: 70%;
+        gap: 0;
+    }
+}
+
+@media (min-width: 1440px) {
+    #header {
+        width: 60%;
     }
 }

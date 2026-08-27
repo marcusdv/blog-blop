@@ -61,3 +61,13 @@ export function getPostBySlug(slug: string): Post | null {
 
     return null;
 }
+
+export function getPostByTitle(title: string): Post | null {
+    const posts = getAllPosts();
+    return posts.find((post) => post.title.toLowerCase() === title.toLowerCase()) || null;
+}
+
+export function getPostByTitleContains(keyword: string): Post | null {
+    const posts = getAllPosts();
+    return posts.find((post) => post.title.toLowerCase().includes(keyword.toLowerCase())) || null;
+}

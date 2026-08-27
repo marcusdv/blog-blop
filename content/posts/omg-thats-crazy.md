@@ -1,8 +1,8 @@
 ---
 title: "omg-thats-crazy"
-date: "2026-08-09"
+date: "09-08-2026"
 description: "Resumo pessoal sobre livros, filmes e séries que acompanhei."
-image: "/images/li-vi-assisti.jpg"
+image: ""
 slug: "li-vi-assisti"
 tags: ["jogos", "webdev", "nextjs"]
 ---

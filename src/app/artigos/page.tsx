@@ -3,6 +3,29 @@ import { getAllPosts } from "@/lib/posts";
 import styles from "./artigos.module.css";
 import Image from "next/image";
 
+function formatDate(dateString: string): string {
+    const meses = ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"];
+
+    let date = new Date();
+
+    // Tenta parsear formato YYYY-MM-DD
+    if (dateString.includes("-") && dateString.split("-")[0].length === 4) {
+        const [year, month, day] = dateString.split("-");
+        date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    }
+    // Tenta parsear formato DD-MM-YYYY
+    else if (dateString.includes("-")) {
+        const [day, month, year] = dateString.split("-");
+        date = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+    }
+
+    const dia = date.getDate();
+    const mes = meses[date.getMonth()];
+    const ano = date.getFullYear();
+
+    return `${dia} de ${mes} de ${ano}`;
+}
+
 export default function Artigos() {
     const posts = getAllPosts();
 
@@ -12,7 +35,9 @@ export default function Artigos() {
                 {posts.map((post) => (
                     <article key={post.slug}>
                         <picture>
-                            <Image src={`/images/default.jpg`} alt="" width={500} height={300} />
+                            <Link href={`/artigos/${post.slug}`}>
+                                <Image src={post.image || "/images/default.jpg"} alt="" width={500} height={300} />
+                            </Link>
                         </picture>
                         <div id="card-content">
                             <hgroup>
@@ -20,7 +45,7 @@ export default function Artigos() {
                                     <h3>{post.title}</h3>
                                 </Link>
                                 <p>
-                                    <time dateTime="">Dezembro 10, 2026</time>
+                                    <time dateTime={post.date}>{formatDate(post.date)}</time>
                                 </p>
                             </hgroup>
 

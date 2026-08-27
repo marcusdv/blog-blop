@@ -2,7 +2,7 @@ import styles from "./footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
 import { IoLogoVercel } from "react-icons/io5";
-import Contato from "../components/ui/Contato";
+import Contato from "../contato/Contato";
 
 export default function Footer() {
     return (
