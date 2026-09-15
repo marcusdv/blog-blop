@@ -1,4 +1,3 @@
-import { IoLogoVercel } from "react-icons/io5";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
@@ -31,11 +30,6 @@ export default function Header() {
             {/* icones */}
             <ul id={styles.icones}>
                 <li>
-                    <a href="https://vercel.com/marcusdvs-projects" target="_blank" rel="noopener noreferrer">
-                        <IoLogoVercel />
-                    </a>
-                </li>
-                <li>
                     <a href="https://www.linkedin.com/in/marcus-bittencourt/" target="_blank" rel="noopener noreferrer">
                         <IoLogoLinkedin />
                     </a>
@@ -51,9 +45,6 @@ export default function Header() {
                     <a href="mailto:marcus.vinicius.bittencourt.c@gmail.com" target="_blank" rel="noopener noreferrer">
                         <MdEmail />
                     </a>
-                </li>
-                <li>
-                    <a href="" target="_blank" rel="noopener noreferrer"></a>
                 </li>
             </ul>
         </header>

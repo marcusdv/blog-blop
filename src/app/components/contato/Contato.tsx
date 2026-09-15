@@ -2,8 +2,12 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./Contato.module.css";
+import { useBotaoPressionado } from "@/app/hooks/useBotaoPressionado";
 
 const Contact = () => {
+    // mantém o botão afundado por um tempo mínimo ao clicar
+    const { pressionado, afundar } = useBotaoPressionado();
+
     // Estado inicial dos campos do formulário
     const initialState = {
         name: "",
@@ -118,10 +122,19 @@ const Contact = () => {
                             onChange={(e) => onValueChange("message", e.target.value)}
                         ></textarea>
                     </label>
-                    <p className={`${status.success ? "text-green-500" : "text-red-500"} text-sm`}>{status.message}</p>
-                    <button type="submit" disabled={isLoading}>
-                        {isLoading ? "Enviando..." : "Enviar Mensagem"}
-                    </button>
+                    <div className={styles.acoes}>
+                        <button
+                            type="submit"
+                            className={pressionado ? styles.pressionado : undefined}
+                            onPointerDown={afundar}
+                            disabled={isLoading}
+                        >
+                            {isLoading ? "Enviando..." : "Enviar Mensagem"}
+                        </button>
+                        <p className={`${status.success ? "text-green-500" : "text-red-500"} text-sm`}>
+                            {status.message}
+                        </p>
+                    </div>
                 </form>
             </div>
         </section>

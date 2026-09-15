@@ -1,0 +1,65 @@
+.moldura {
+    align-self: center;
+    width: clamp(100px, 70vw, 370px);
+    aspect-ratio: 1 / 1;
+    margin: auto;
+}
+
+.arte {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* xícara flutuando de leve */
+.xicara {
+    animation: flutuarXicara 4.5s ease-in-out infinite;
+}
+
+/* vapor subindo, uma coluna de cada vez.
+   Está dentro do grupo de Y invertido do SVG original, então translateY positivo sobe. */
+.vapor {
+    animation: subirVapor 3.4s ease-in-out infinite;
+}
+
+.vapor1 {
+    animation-delay: 0s;
+}
+
+.vapor2 {
+    animation-delay: 0.7s;
+}
+
+@keyframes flutuarXicara {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@keyframes subirVapor {
+    0% {
+        opacity: 0;
+        transform: translateY(-2px);
+    }
+    20% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0.95;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(2.6px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .xicara,
+    .vapor {
+        animation: none;
+    }
+}

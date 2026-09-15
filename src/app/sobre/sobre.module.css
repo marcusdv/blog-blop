@@ -5,8 +5,7 @@
     gap: 1rem;
 
     #ultimoUpdate {
-        background-color: white;
-        border: var(--main-black);
+        background-color: var(--main-white);
         border: 1px solid var(--main-black);
         padding: 0.5rem 1rem;
         border-radius: 0.5rem;

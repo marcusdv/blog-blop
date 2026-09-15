@@ -51,11 +51,9 @@ export default function Artigos() {
 
                             <p>{post.description}</p>
                         </div>
-                        <ul id="article-tags">
+                        <ul className="tags">
                             {post.tags.map((tag) => (
-                                <li key={tag}>
-                                    <Link href={`/artigos/tags/${tag}`}>{tag}</Link>
-                                </li>
+                                <li key={tag}>{tag}</li>
                             ))}
                         </ul>
                     </article>

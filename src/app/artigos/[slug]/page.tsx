@@ -57,23 +57,17 @@ export default async function Post({ params }: { params: Promise<{ slug: string 
 
     return (
         <div className={styles.post}>
-            <picture>
-                <a href=""></a>
-            </picture>
-            <div id="card-content">
-                <hgroup>
-                    <h3>{post.title}</h3>
-                    <p>
-                        <time dateTime={post.date}>{formatDate(post.date)}</time>
-                    </p>
-                </hgroup>
-            </div>
+            <hgroup>
+                <h3>{post.title}</h3>
+                <p>
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                </p>
+            </hgroup>
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
-            <ul id="article-tags" className="flex gap-2">
-                <li>#tabueleiro</li>
-                <li>#vôlei</li>
-                <li>#next</li>
-                <li>#sql</li>
+            <ul className="tags">
+                {post.tags.map((tag) => (
+                    <li key={tag}>{tag}</li>
+                ))}
             </ul>
         </div>
     );

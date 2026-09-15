@@ -1,7 +1,6 @@
 import styles from "./footer.module.css";
 import { FaGithub } from "react-icons/fa";
 import { IoLogoLinkedin } from "react-icons/io5";
-import { IoLogoVercel } from "react-icons/io5";
 import Contato from "../contato/Contato";
 
 export default function Footer() {
@@ -12,11 +11,6 @@ export default function Footer() {
             <div id={styles.footerSocial}>
                 <h4>SIGA-ME!</h4>
                 <ul>
-                    <li>
-                        <a href="https://vercel.com/marcusdvs-projects" target="_blank" rel="noopener noreferrer">
-                            <IoLogoVercel />
-                        </a>
-                    </li>
                     <li>
                         <a
                             href="https://www.linkedin.com/in/marcus-bittencourt/"

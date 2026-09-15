@@ -1,20 +1,17 @@
 "use client";
-import Header from "./components/header/Header";
-import Contato from "./components/contato/Contato";
 import { PiArrowFatLinesUpBold } from "react-icons/pi";
-import Footer from "./components/footer/page";
-import Link from "next/link";
-import Image from "next/image";
 import ArticlePreview from "./components/ArticlePreview";
+import CoffeeHero from "./components/hero/CoffeeHero";
+import { useBotaoPressionado } from "./hooks/useBotaoPressionado";
 
 export default function Home() {
+    const { pressionado, afundar } = useBotaoPressionado();
+
     return (
         <div>
             <main>
                 <section id="introduction-section">
-                    <picture>
-                        <div id="quadrado-temporario"></div>
-                    </picture>
+                    <CoffeeHero />
 
                     <div id="apresentacao">
                         <h1>
@@ -25,7 +22,15 @@ export default function Home() {
                             <a className="bold">Desenvolvedor Fullstack</a>, <a className="bold">Entusiasta de Vôlei</a>{" "}
                             vivendo em Salvador, Bahia!
                         </p>
-                        <button>Baixar Currículo</button>
+                        <a
+                            id="baixar-curriculo"
+                            className={pressionado ? "pressionado" : undefined}
+                            href="/pdfs/Marcus_Costa_Desenvolvedor_Fullstack.pdf"
+                            download
+                            onPointerDown={afundar}
+                        >
+                            Baixar Currículo
+                        </a>
                     </div>
                 </section>
 

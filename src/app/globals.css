@@ -5,10 +5,11 @@
     --main-green: hsl(195, 91%, 22%);
     --main-green-hover: hsl(68, 39%, 69%);
     --main-yellow: hsl(68, 39%, 89%);
+    --main-green-soft: hsl(195, 91%, 95%);
     --main-black: #211713;
     --main-white: white;
-    --main-border: 4px solid var(--main-black);
-    --shadow: 0 30px 80px rgba(33, 23, 19, 0.18);
+    --sombra-dura: 5px 5px 0 var(--main-black);
+    --sombra-pressionada: 2px 2px 0 var(--main-black);
 }
 
 .efeitoVarredura {
@@ -27,7 +28,7 @@
 @keyframes flutuar {
     0%,
     100% {
-        transform: translateY(3);
+        transform: translateY(0);
     }
     50% {
         transform: translateY(-3px);
@@ -80,12 +81,32 @@ a:hover {
     cursor: pointer;
 }
 
+/* TAGS — mesma pílula no card e no post */
+.tags {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    li {
+        border: 1px solid var(--main-green);
+        /* arredondamento total: a pílula fica igual em qualquer tamanho de texto */
+        border-radius: 999px;
+        background-color: var(--main-white);
+        color: var(--main-green);
+        font-size: 0.9rem;
+        font-weight: 500;
+        line-height: 1.7rem;
+        padding: 0 0.8rem;
+    }
+}
+
 /* ARTIGOS */
 article {
     display: grid;
     grid-template-columns: 1fr;
     border: 1px solid var(--main-black);
-    background-color: white;
+    background-color: var(--main-white);
     border-radius: 1rem;
     overflow: hidden;
 
@@ -96,15 +117,29 @@ article {
         padding: 1.2rem 1rem;
     }
 
+    hgroup {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+    }
+
+    /* data: menor e discreta, pra não competir com o título */
+    hgroup p {
+        font-size: 0.95rem;
+        font-weight: 500;
+        opacity: 0.7;
+    }
+
     h3 {
         color: var(--main-green);
         border-bottom: 2px solid var(--main-green);
     }
+
     img {
         display: block;
         width: 100%;
-        height: clamp(100%, 0vw, 500px);
-        /* Mínimo: 250px | Responsivo: 50% da tela | Máximo: 400px */
+        height: 100%;
+        object-fit: cover;
     }
 
     p {
@@ -112,34 +147,19 @@ article {
         font-weight: 400;
     }
 
-    #article-tags {
-        display: flex;
-        gap: 10;
-        align-items: center;
-        flex-wrap: wrap;
+    .tags {
         padding: 0 1rem 1rem 1rem;
-
-        li {
-            font-size: 1rem;
-            border: 1px solid var(--main-green);
-            color: var(--main-green);
-            border-radius: 0.6rem;
-            font-weight: 400;
-            padding: 0 15px;
-            color: var(--main-green);
-            background-color: var(--main-white);
-        }
     }
 }
 
 article:hover {
-    box-shadow: 5px 5px 0 var(--main-black);
+    box-shadow: var(--sombra-dura);
 }
 
 main {
     display: flex;
     flex-direction: column;
-    gap: 40;
+    gap: 40px;
     margin-bottom: 40px;
 
     #introduction-section {
@@ -150,26 +170,11 @@ main {
         min-width: 50%;
         margin: auto;
 
-        h1 {
-            white-space: nowrap;
-        }
-
         #apresentacao {
             display: flex;
             flex-direction: column;
             align-items: start;
             gap: 20px;
-        }
-
-        picture {
-            align-self: center;
-            #quadrado-temporario {
-                width: clamp(100px, 70vw, 370px);
-                aspect-ratio: 1 / 1;
-                border-radius: 50%;
-                border: 1px solid var(--main-green);
-                margin: auto;
-            }
         }
 
         h1 {
@@ -186,7 +191,8 @@ main {
             font-size: 1.25rem;
         }
 
-        button {
+        #baixar-curriculo {
+            display: inline-block;
             background-color: var(--main-green);
             color: var(--main-yellow);
             font-size: 1.4rem;
@@ -194,22 +200,26 @@ main {
             font-weight: 700;
             padding: 4px 22px;
             border-radius: 1rem;
-            box-shadow: 5px 5px 0 var(--main-black);
+            box-shadow: var(--sombra-dura);
+            /* desce e volta suave */
             transition:
-                transform 0.18s ease,
-                box-shadow 0.18s ease;
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
         }
 
-        button:hover {
+        /* afunda no clique: :active enquanto segura,
+           .pressionado segura o tempo mínimo (vem do page.tsx) */
+        #baixar-curriculo:active,
+        #baixar-curriculo.pressionado {
             transform: translate(3px, 3px);
-            box-shadow: 2px 2px 0 var(--main-black);
+            box-shadow: var(--sombra-pressionada);
         }
     }
 
     #voltar-ao-topo {
         display: flex;
         align-items: center;
-        gap: 6;
+        gap: 6px;
         width: fit-content;
         color: var(--main-green);
         font-size: 1.5rem;
@@ -244,8 +254,11 @@ footer {
 
 @media (min-width: 768px) {
     article {
+        /* altura igual em todos os cards, com as tags sempre ancoradas no rodapé */
+        min-height: 15rem;
         max-height: 400px;
         grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto;
 
         picture {
             grid-row: span 2;
@@ -255,7 +268,7 @@ footer {
             grid-column: span 2;
         }
 
-        #article-tags {
+        .tags {
             grid-column: span 2;
         }
     }

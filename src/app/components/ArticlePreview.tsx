@@ -83,11 +83,9 @@ export default function ArticlePreview({ slug }: ArticlePreviewProps) {
 
                 <p>{article.description}</p>
             </div>
-            <ul id="article-tags">
+            <ul className="tags">
                 {article.tags.map((tag) => (
-                    <li key={tag}>
-                        <Link href={`/artigos/tags/${tag}`}>{tag}</Link>
-                    </li>
+                    <li key={tag}>{tag}</li>
                 ))}
             </ul>
         </article>
