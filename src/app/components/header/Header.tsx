@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { IoLogoLinkedin } from "react-icons/io5";
@@ -9,20 +10,20 @@ export default function Header() {
         <header id={styles.header}>
             {/* lado esquerdo */}
             <div id={styles.logo}>
-                <a href="/">Marcus Costa</a>
+                <Link href="/">Marcus Costa</Link>
             </div>
 
             {/* lado direito */}
             <nav id={styles.navegacao}>
                 <ul>
                     <li className={"efeitoVarredura"}>
-                        <a href="/sobre">Sobre</a>
+                        <Link href="/sobre">Sobre</Link>
                     </li>
                     <li className={"efeitoVarredura"}>
-                        <a href="/artigos">Blog</a>
+                        <Link href="/artigos">Blog</Link>
                     </li>
                     <li className={"efeitoVarredura"}>
-                        <a href="/projetos">Meus Projetos</a>
+                        <Link href="/projetos">Meus Projetos</Link>
                     </li>
                 </ul>
             </nav>
