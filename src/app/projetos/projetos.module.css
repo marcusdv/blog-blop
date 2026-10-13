@@ -1,0 +1,7 @@
+#projectsDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: fit-content;
+    margin: 0 auto 4rem;
+}
