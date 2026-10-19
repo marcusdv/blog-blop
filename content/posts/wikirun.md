@@ -2,7 +2,7 @@
 title: "Meu jogo de corrida na wikipédia!"
 date: "28-08-2026"
 description: "Um jogo para navegar pela Wikipédia, clicando de link em link até chegar ao destino."
-image: "/images/wikirun.png"
+image: "/images/wikipedia.jpg"
 slug: "projeto-wikirun"
 tags: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "NES.css", "Zod", "JWT", "API da Wikipédia", "Vercel"]
 ---

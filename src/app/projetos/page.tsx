@@ -7,7 +7,7 @@ const projetos = [
         slug: "projeto-wikirun",
         title: "Wiki Run",
         description: "Um jogo para navegar pela Wikipédia, clicando de link em link até chegar ao destino.",
-        image: "/images/wikirun.png",
+        image: "/images/wikipedia.jpg",
         site: "https://wikigame-five.vercel.app",
         repo: "https://github.com/marcusdv/wikigame",
         tags: ["Next.js", "React", "TypeScript", "Tailwind", "Supabase", "NES.css", "Zod", "JWT", "API da Wikipédia", "Vercel"],

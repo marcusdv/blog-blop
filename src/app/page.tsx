@@ -39,7 +39,7 @@ export default function Home() {
 
                     <ul>
                         <li>
-                            <ArticlePreview slug="li-vi-assisti-1" />
+                            <ArticlePreview slug="li-vi-assisti-1" priority />
                         </li>
                     </ul>
                 </section>

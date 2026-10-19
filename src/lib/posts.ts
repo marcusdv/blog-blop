@@ -5,6 +5,17 @@ import { marked } from "marked";
 
 const postsDirectory = path.join(process.cwd(), "content/posts");
 
+// Links dos posts abrem em outra aba
+marked.use({
+    renderer: {
+        link({ href, title, tokens }) {
+            const text = this.parser.parseInline(tokens);
+            const titleAttr = title ? ` title="${title}"` : "";
+            return `<a href="${href}"${titleAttr} target="_blank" rel="noopener noreferrer">${text}</a>`;
+        },
+    },
+});
+
 export interface Post {
     slug: string;
     title: string;

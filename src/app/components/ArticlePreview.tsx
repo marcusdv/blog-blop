@@ -7,6 +7,7 @@ import { getArticleData } from "@/app/actions/getArticleData";
 
 interface ArticlePreviewProps {
     slug: string;
+    priority?: boolean;
 }
 
 interface Article {
@@ -37,7 +38,7 @@ function formatDate(dateString: string): string {
     return `${dia} de ${mes} de ${ano}`;
 }
 
-export default function ArticlePreview({ slug }: ArticlePreviewProps) {
+export default function ArticlePreview({ slug, priority }: ArticlePreviewProps) {
     const [article, setArticle] = useState<Article | null>(null);
     const [loading, setLoading] = useState(true);
 
@@ -68,7 +69,7 @@ export default function ArticlePreview({ slug }: ArticlePreviewProps) {
         <article>
             <picture>
                 <Link href={`/artigos/${slug}`}>
-                    <Image src={article.image || "/images/default.jpg"} alt={article.title} width={500} height={300} />
+                    <Image src={article.image || "/images/default.jpg"} alt={article.title} width={500} height={300} priority={priority} />
                 </Link>
             </picture>
             <div id="card-content">
