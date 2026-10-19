@@ -25,7 +25,7 @@ export default function Home() {
                         <a
                             id="baixar-curriculo"
                             className={pressionado ? "pressionado" : undefined}
-                            href="/pdfs/Marcus_Costa_Desenvolvedor_Fullstack.pdf"
+                            href="/pdfs/Marcus_costa.pdf"
                             download
                             onPointerDown={afundar}
                         >

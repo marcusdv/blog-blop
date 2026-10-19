@@ -31,7 +31,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="pt-br" className={`h-full antialiased `}>
-            <body>
+            <body suppressHydrationWarning>
                 <Header />
                 <div id="content">{children}</div>
                 <Footer />
